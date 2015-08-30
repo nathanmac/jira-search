@@ -1,0 +1,81 @@
+{
+  "application_title": {
+    "message": "Jira Search",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "application_description": {
+    "message": "Omnibox Chrome Extension Jira Search Tool",
+    "description": "The description of the application, displayed in the web store."
+  },
+
+  "options_title": {
+    "message": "Jira Search",
+    "description": "The main title for the options page."
+  },
+  "options_subtitle": {
+    "message": "Configuration and Settings",
+    "description": "The subtitle for the options page."
+  },
+
+  "options_host_label": {
+    "message": "URL",
+    "description": "The text label for the users host url, used in the options page."
+  },
+  "options_host_placeholder": {
+    "message": "https://jira.atlassian.com/",
+    "description": "The placeholder text for the users host url, used in the options page."
+  },
+  "options_host_validation_url": {
+    "message": "Jira host url must be a valid url",
+    "description": "The validation url text for the users host url, used in the options page."
+  },
+
+  "options_username_label": {
+    "message": "Username",
+    "description": "The text label for the users username, used in the options page."
+  },
+  "options_username_placeholder": {
+    "message": "Username",
+    "description": "The placeholder text for the users username, used in the options page." 
+  },
+  "options_username_validation_required": {
+    "message": "Username is required.",
+    "description": "The validation required text for the users username, used in the options page."
+  },
+
+  "options_password_label": {
+    "message": "Password",
+    "description": "The text label for the users password, used in the options page."
+  },
+  "options_password_placeholder": {
+    "message": "Password",
+    "description": "The placeholder text for the users password, used in the options page." 
+  },
+  "options_password_validation_required": {
+    "message": "Password is required.",
+    "description": "The validation required text for the users password, used in the options page."
+  },
+
+  "options_filter_user_label": {
+    "message": "Only list for assigned and/or watched tickets.",
+    "description": "The label text for the filter by assigned and/or watched tickets, used in the options page."
+  },
+
+  "options_button_text": {
+    "message": "Update Settings",
+    "description": "The update button in the options page, clicked to update the user settings/options."
+  },
+
+  "options_success_message": {
+    "message": "You're setting have been successfully updated.",
+    "description": "The success message display to the user when the settings have been updated."
+  },
+  "options_error_message": {
+    "message": "An error has occurred, please try again!",
+    "description": "The error message display to the user when the settings have failed to be updated."
+  },
+  "options_authentication_failed_message": {
+    "message": "Failed to authenticate, please check your settings!",
+    "description": "The error message display to the user when the settings fail to authenticate."
+  }
+}

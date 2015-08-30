@@ -1,0 +1,89 @@
+<html>
+<head>
+    <title>{{ lang.title }} - {{ lang.subtitle }}</title>
+    <link rel="stylesheet" type="text/css" href="../css/options.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>{{ lang.title }}
+            <small>{{ lang.subtitle }}</small>
+        </h1>
+        <form class="form-horizontal well" v-on="submit: updateSettings">
+            <div class="form-group"
+                v-class="has-error: validation.settings.host.url">
+                <label for="jira_host" class="col-sm-2 control-label">{{ lang.fields.host.label }}</label>
+
+                <div class="col-sm-6">
+                    <input
+                        type="text"
+                        class="form-control"
+                        v-model="settings.host"
+                        v-validate="url"
+                        placeholder="{{ lang.fields.host.placeholder }}" />
+
+                    <span class="help-block" v-if="validation.settings.host.url">
+                        {{ lang.fields.host.validation.url }}
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group" v-class="has-error: validation.settings.username.required">
+                <label for="jira_username" class="col-sm-2 control-label">{{ lang.fields.username.label }}</label>
+
+                <div class="col-sm-6">
+                    <input
+                        type="text"
+                        class="form-control"
+                        v-model="settings.username"
+                        v-validate="required"
+                        placeholder="{{ lang.fields.username.placeholder }}" />
+
+                    <span class="help-block" v-if="validation.settings.username.required">{{ lang.fields.username.validation.required }}</span>
+                </div>
+            </div>
+
+            <div class="form-group" v-class="has-error: validation.settings.password.required">
+                <label for="jira_password" class="col-sm-2 control-label">{{ lang.fields.password.label }}</label>
+
+                <div class="col-sm-6">
+                    <input
+                        type="password"
+                        class="form-control"
+                        v-model="settings.password"
+                        v-validate="required"
+                        placeholder="{{ lang.fields.password.placeholder }}" />
+
+                    <span class="help-block" v-if="validation.settings.password.required">{{ lang.fields.password.validation.required }}</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" v-model="settings.filterByUser"> {{ lang.fields.filteruser.label }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button
+                        id="save-button"
+                        type="submit"
+                        class="btn btn-primary"
+                        v-attr="disabled: updating, disabled: ! valid">{{ lang.button.text }}</button>
+
+                    <span class="spinner" v-show="updating">
+                        <img src="../images/spinner.gif" alt="loading spinner" title="Updating..."/>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="../js/options.min.js"></script>
+</body>
+</html>
