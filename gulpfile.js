@@ -15,7 +15,8 @@ var gulp       = require('gulp'),
     pngquant   = require('imagemin-pngquant'),
     notify     = require('gulp-notify'),
     path       = require('path'),
-    jsonminify = require('gulp-jsonminify');
+    jsonminify = require('gulp-jsonminify'),
+    zip        = require('gulp-zip');
 
 gulp.task('css', function () {
   gulp.src('./sass/**/*.scss')
@@ -89,8 +90,14 @@ gulp.task('notify', function() {
     }));
 });
 
+gulp.task('zip', function () {
+    return gulp.src('dist/*')
+        .pipe(zip('package.zip'))
+        .pipe(gulp.dest('./dist/'));
+});
+
 gulp.task('build', ['copy', 'css', 'js', 'html', 'images', 'notify']);
-gulp.task('package', ['build']);
+gulp.task('package', ['build', 'zip']);
 gulp.task('default', ['build']);
 
 gulp.task('watch', function () {
